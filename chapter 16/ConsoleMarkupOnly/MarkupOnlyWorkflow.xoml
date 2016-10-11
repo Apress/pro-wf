@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<proWF:MarkupOnlyBaseWorkflow 
+  x:Name="MarkupOnlyWorkflow" 
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow"
+  xmlns:proWF="clr-namespace:SharedWorkflows;Assembly=SharedWorkflows">
+  <IfElseActivity x:Name="ifElseActivity1">
+    <IfElseBranchActivity x:Name="ifElseBranchActivity1">
+      <IfElseBranchActivity.Condition>
+        <CodeCondition Condition=
+          "{ActivityBind Name=MarkupOnlyWorkflow, Path=IsNumberPositive}"/>
+      </IfElseBranchActivity.Condition>
+      <proWF:WriteMessageActivity x:Name="writeMessagePositive" 
+          Message="The number is positive"/>
+    </IfElseBranchActivity>
+    <IfElseBranchActivity x:Name="ifElseBranchActivity2">
+      <proWF:WriteMessageActivity x:Name="writeMessageNotPositive" 
+          Message="The number is NOT positive"/>
+    </IfElseBranchActivity>
+  </IfElseActivity>
+</proWF:MarkupOnlyBaseWorkflow>
+

@@ -1,0 +1,138 @@
+﻿<StateMachineWorkflowDesigner xmlns:ns0="clr-namespace:System.Drawing;Assembly=System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Name="CarWorkflow" Location="30, 30" Size="801, 796" AutoSizeMargin="16, 24" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateMachineWorkflowDesigner.DesignerConnectors>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="RunningState" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setRunningState" SourceStateName="NotRunningState" SourceConnectionEdge="Right" TargetActivity="RunningState" SourceActivity="NotRunningState" EventHandlerName="eventStartEngine">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="199" Y="166" />
+				<ns0:Point X="270" Y="166" />
+				<ns0:Point X="270" Y="316" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="DoneWithCarState" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="setDoneWithCar" SourceStateName="NotRunningState" SourceConnectionEdge="Right" TargetActivity="DoneWithCarState" SourceActivity="NotRunningState" EventHandlerName="eventLeaveCar">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="189" Y="190" />
+				<ns0:Point X="524" Y="190" />
+				<ns0:Point X="524" Y="197" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="NotRunningState" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setNotRunning" SourceStateName="RunningState" SourceConnectionEdge="Right" TargetActivity="NotRunningState" SourceActivity="RunningState" EventHandlerName="eventStopEngine">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="321" Y="357" />
+				<ns0:Point X="355" Y="357" />
+				<ns0:Point X="355" Y="93" />
+				<ns0:Point X="155" Y="93" />
+				<ns0:Point X="155" Y="101" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="MovingForwardState" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="setMovingForward" SourceStateName="RunningState" SourceConnectionEdge="Right" TargetActivity="MovingForwardState" SourceActivity="RunningState" EventHandlerName="eventGoForward">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="319" Y="381" />
+				<ns0:Point X="616" Y="381" />
+				<ns0:Point X="616" Y="459" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="MovingInReverseState" SourceConnectionIndex="2" TargetConnectionEdge="Top" SetStateName="setMovingInReverse" SourceStateName="RunningState" SourceConnectionEdge="Right" TargetActivity="MovingInReverseState" SourceActivity="RunningState" EventHandlerName="eventGoReverse">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="319" Y="405" />
+				<ns0:Point X="393" Y="405" />
+				<ns0:Point X="393" Y="463" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="RunningState" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setRunning" SourceStateName="MovingForwardState" SourceConnectionEdge="Right" TargetActivity="RunningState" SourceActivity="MovingForwardState" EventHandlerName="eventStopMovement">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="673" Y="500" />
+				<ns0:Point X="718" Y="500" />
+				<ns0:Point X="718" Y="308" />
+				<ns0:Point X="270" Y="308" />
+				<ns0:Point X="270" Y="316" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="RunningState" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setRunning2" SourceStateName="MovingInReverseState" SourceConnectionEdge="Right" TargetActivity="RunningState" SourceActivity="MovingInReverseState" EventHandlerName="eventStopMovement2">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="447" Y="504" />
+				<ns0:Point X="502" Y="504" />
+				<ns0:Point X="502" Y="308" />
+				<ns0:Point X="270" Y="308" />
+				<ns0:Point X="270" Y="316" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+	</StateMachineWorkflowDesigner.DesignerConnectors>
+	<StateMachineWorkflowDesigner.Designers>
+		<StateDesigner Name="NotRunningState" Location="68, 101" Size="175, 102" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 292" Name="eventStartEngine" Location="76, 156">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleStartEngine" Location="86, 228" />
+						<CallExternalMethodActivityDesigner Size="90, 40" Name="callExternalMethodActivity1" Location="86, 298" />
+						<SetStateDesigner Size="90, 50" Name="setRunningState" Location="86, 368" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="110, 292" Name="eventLeaveCar" Location="76, 180">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleLeaveCar" Location="86, 252" />
+						<CallExternalMethodActivityDesigner Size="90, 40" Name="callExternalMethodActivity2" Location="86, 322" />
+						<SetStateDesigner Size="90, 50" Name="setDoneWithCar" Location="86, 392" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<StateInitializationDesigner Size="110, 142" Name="stateInitializationActivity1" Location="76, 132">
+					<StateInitializationDesigner.Designers>
+						<CallExternalMethodActivityDesigner Size="90, 40" Name="callExternalMethodActivity9" Location="86, 204" />
+					</StateInitializationDesigner.Designers>
+				</StateInitializationDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="RunningState" Location="190, 316" Size="160, 102" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 292" Name="eventStopEngine" Location="198, 347">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleStopEngine" Location="208, 419" />
+						<CallExternalMethodActivityDesigner Size="90, 40" Name="callExternalMethodActivity3" Location="208, 489" />
+						<SetStateDesigner Size="90, 50" Name="setNotRunning" Location="208, 559" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="110, 292" Name="eventGoForward" Location="198, 371">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleGoForward" Location="208, 443" />
+						<CallExternalMethodActivityDesigner Size="90, 40" Name="callExternalMethodActivity4" Location="208, 513" />
+						<SetStateDesigner Size="90, 50" Name="setMovingForward" Location="208, 583" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="110, 292" Name="eventGoReverse" Location="198, 395">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleGoReverse" Location="208, 467" />
+						<CallExternalMethodActivityDesigner Size="90, 40" Name="callExternalMethodActivity5" Location="208, 537" />
+						<SetStateDesigner Size="90, 50" Name="setMovingInReverse" Location="208, 607" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="MovingForwardState" Location="525, 459" Size="182, 97" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 282" Name="eventStopMovement" Location="533, 490">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleStopMovement" Location="543, 562" />
+						<CallExternalMethodActivityDesigner Size="90, 40" Name="callExternalMethodActivity6" Location="543, 632" />
+						<SetStateDesigner Size="90, 40" Name="setRunning" Location="543, 702" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="MovingInReverseState" Location="293, 463" Size="201, 98" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 292" Name="eventStopMovement2" Location="301, 494">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleStopMovement2" Location="311, 566" />
+						<CallExternalMethodActivityDesigner Size="90, 40" Name="callExternalMethodActivity7" Location="311, 636" />
+						<SetStateDesigner Size="90, 50" Name="setRunning2" Location="311, 706" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="DoneWithCarState" Location="444, 197" Size="160, 80" AutoSizeMargin="16, 24" />
+		<EventDrivenDesigner Size="110, 212" Name="eventBeepHorn" Location="38, 61">
+			<EventDrivenDesigner.Designers>
+				<HandleExternalEventActivityDesigner Size="90, 40" Name="handleBeepHorn" Location="48, 133" />
+				<CallExternalMethodActivityDesigner Size="90, 40" Name="callExternalMethodActivity8" Location="48, 203" />
+			</EventDrivenDesigner.Designers>
+		</EventDrivenDesigner>
+	</StateMachineWorkflowDesigner.Designers>
+</StateMachineWorkflowDesigner>

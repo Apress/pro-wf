@@ -1,0 +1,134 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B2B7A9A1-0090-430E-B200-0F8AEBB67847}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SharedWorkflows</RootNamespace>
+    <AssemblyName>SharedWorkflows</AssemblyName>
+    <ProjectTypeGuids>{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CAGWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CAGWorkflow.Designer.cs">
+      <DependentUpon>CAGWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsoleMessageActivity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ConsoleMessageActivity.Designer.cs">
+      <DependentUpon>ConsoleMessageActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParallelDelayWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ParallelDelayWorkflow.Designer.cs">
+      <DependentUpon>ParallelDelayWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IfElseRuleWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IfElseRuleWorkflow.Designer.cs">
+      <DependentUpon>IfElseRuleWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IfElseCodeWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IfElseCodeWorkflow.Designer.cs">
+      <DependentUpon>IfElseCodeWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParallelWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ParallelWorkflow.Designer.cs">
+      <DependentUpon>ParallelWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ReplicatorParallelWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReplicatorParallelWorkflow.Designer.cs">
+      <DependentUpon>ReplicatorParallelWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReplicatorWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReplicatorWorkflow.Designer.cs">
+      <DependentUpon>ReplicatorWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WhileWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WhileWorkflow.Designer.cs">
+      <DependentUpon>WhileWorkflow.cs</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CAGWorkflow.rules">
+      <DependentUpon>CAGWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IfElseRuleWorkflow.rules">
+      <DependentUpon>IfElseRuleWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParallelDelayWorkflow.rules">
+      <DependentUpon>ParallelDelayWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParallelWorkflow.rules">
+      <DependentUpon>ParallelWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WhileWorkflow.rules">
+      <DependentUpon>WhileWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Windows Workflow Foundation\v3.0\Workflow.Targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetDir)$(TargetName)$(TargetExt)"  "$(SolutionDir)\bin"
+if EXIST "$(TargetDir)$(TargetName).pdb" copy "$(TargetDir)$(TargetName).pdb"  "$(SolutionDir)\bin"
+if EXIST "$(TargetDir)$(TargetName).exe.config" copy "$(TargetDir)$(TargetName).exe.config"  "$(SolutionDir)\bin"
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

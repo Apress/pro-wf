@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns0:MarkupOnlyBaseWorkflow x:Class="ProWF.MyNewWorkflowClass" x:Name="CodedWorkflow" TheNumber="0" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ns0="clr-namespace:SharedWorkflows;Assembly=SharedWorkflows, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+	<IfElseActivity x:Name="ifElseActivity1">
+		<IfElseBranchActivity x:Name="ifElseBranchActivity1">
+			<IfElseBranchActivity.Condition>
+				<RuleConditionReference ConditionName="IsNumberPositive" />
+			</IfElseBranchActivity.Condition>
+			<ns0:WriteMessageActivity Message="The number is positive" x:Name="writeMessagePositive" />
+		</IfElseBranchActivity>
+		<IfElseBranchActivity x:Name="ifElseBranchActivity2">
+			<ns0:WriteMessageActivity Message="The number is NOT positive" x:Name="writeMessageNotPositive" />
+		</IfElseBranchActivity>
+	</IfElseActivity>
+</ns0:MarkupOnlyBaseWorkflow>

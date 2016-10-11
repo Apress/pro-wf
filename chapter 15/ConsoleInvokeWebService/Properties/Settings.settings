@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ConsoleInvokeWebService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConsoleInvokeWebService_localhost_MathServiceWorkflow_WebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:1269/SharedWorkflows_WebService/SharedWorkflows.MathServiceWorkflow_WebService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

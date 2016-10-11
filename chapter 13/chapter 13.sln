@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bukovics.Workflow.Hosting", "..\shared\Bukovics.Workflow.Hosting\Bukovics.Workflow.Hosting.csproj", "{000B0C86-05DD-4786-9CE9-FA0A20B22120}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedWorkflows", "SharedWorkflows\SharedWorkflows.csproj", "{656302E2-2261-4C4C-BDCF-487494E7B1A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleDynamicUpdate", "ConsoleDynamicUpdate\ConsoleDynamicUpdate.csproj", "{731160B0-4A1A-4644-BF69-9D82523CD67D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleSelfUpdating", "ConsoleSelfUpdating\ConsoleSelfUpdating.csproj", "{C63ABB87-B80A-440F-8979-7392A08CE112}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleDynamicUpdateRestricted", "ConsoleDynamicUpdateRestricted\ConsoleDynamicUpdateRestricted.csproj", "{33818D58-7EF3-4FA7-9591-E0541FDA88B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleDynamicCondition", "ConsoleDynamicCondition\ConsoleDynamicCondition.csproj", "{522BD2B3-8FC6-40B3-AB9C-3F551FDCF867}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleDynamicRule", "ConsoleDynamicRule\ConsoleDynamicRule.csproj", "{5C532102-1F89-4728-AE2E-D42B3BE44001}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{000B0C86-05DD-4786-9CE9-FA0A20B22120}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{000B0C86-05DD-4786-9CE9-FA0A20B22120}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{000B0C86-05DD-4786-9CE9-FA0A20B22120}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{000B0C86-05DD-4786-9CE9-FA0A20B22120}.Release|Any CPU.Build.0 = Release|Any CPU
+		{656302E2-2261-4C4C-BDCF-487494E7B1A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{656302E2-2261-4C4C-BDCF-487494E7B1A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{656302E2-2261-4C4C-BDCF-487494E7B1A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{656302E2-2261-4C4C-BDCF-487494E7B1A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{731160B0-4A1A-4644-BF69-9D82523CD67D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{731160B0-4A1A-4644-BF69-9D82523CD67D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{731160B0-4A1A-4644-BF69-9D82523CD67D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{731160B0-4A1A-4644-BF69-9D82523CD67D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C63ABB87-B80A-440F-8979-7392A08CE112}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C63ABB87-B80A-440F-8979-7392A08CE112}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C63ABB87-B80A-440F-8979-7392A08CE112}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C63ABB87-B80A-440F-8979-7392A08CE112}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33818D58-7EF3-4FA7-9591-E0541FDA88B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33818D58-7EF3-4FA7-9591-E0541FDA88B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33818D58-7EF3-4FA7-9591-E0541FDA88B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33818D58-7EF3-4FA7-9591-E0541FDA88B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{522BD2B3-8FC6-40B3-AB9C-3F551FDCF867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{522BD2B3-8FC6-40B3-AB9C-3F551FDCF867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{522BD2B3-8FC6-40B3-AB9C-3F551FDCF867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{522BD2B3-8FC6-40B3-AB9C-3F551FDCF867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C532102-1F89-4728-AE2E-D42B3BE44001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C532102-1F89-4728-AE2E-D42B3BE44001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C532102-1F89-4728-AE2E-D42B3BE44001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C532102-1F89-4728-AE2E-D42B3BE44001}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

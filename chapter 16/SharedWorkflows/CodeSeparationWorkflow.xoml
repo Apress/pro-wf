@@ -1,0 +1,18 @@
+﻿<SequentialWorkflowActivity x:Class="SharedWorkflows.CodeSeparationWorkflow" 
+  x:Name="CodeSeparationWorkflow" 
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+  <IfElseActivity x:Name="ifElseActivity1">
+    <IfElseBranchActivity x:Name="ifElseBranchActivity1">
+      <IfElseBranchActivity.Condition>
+        <CodeCondition Condition="IsNumberPositive" />
+      </IfElseBranchActivity.Condition>
+      <CodeActivity x:Name="codeNumberIsPositive" 
+        ExecuteCode="codeNumberIsPositive_ExecuteCode" />
+    </IfElseBranchActivity>
+    <IfElseBranchActivity x:Name="ifElseBranchActivity2">
+      <CodeActivity x:Name="codeNumberNotPositive" 
+        ExecuteCode="codeNumberNotPositive_ExecuteCode" />
+    </IfElseBranchActivity>
+  </IfElseActivity>
+</SequentialWorkflowActivity>

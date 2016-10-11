@@ -1,0 +1,122 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7C750B26-974F-426A-9B8F-6737A0A97106}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SharedWorkflows</RootNamespace>
+    <AssemblyName>SharedWorkflows</AssemblyName>
+    <ProjectTypeGuids>{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SellItemSerializedWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SellItemSerializedWorkflow.Designer.cs">
+      <DependentUpon>SellItemSerializedWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellItemInCodeWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SellItemInCodeWorkflow.Designer.cs">
+      <DependentUpon>SellItemInCodeWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellItemUpdateWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SellItemUpdateWorkflow.Designer.cs">
+      <DependentUpon>SellItemUpdateWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellItemMethods2Workflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SellItemMethods2Workflow.Designer.cs">
+      <DependentUpon>SellItemMethods2Workflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellItemMethodsWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SellItemMethodsWorkflow.Designer.cs">
+      <DependentUpon>SellItemMethodsWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellItemPriorityWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SellItemPriorityWorkflow.Designer.cs">
+      <DependentUpon>SellItemPriorityWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SalesItem.cs" />
+    <Compile Include="SellItemWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SellItemWorkflow.Designer.cs">
+      <DependentUpon>SellItemWorkflow.cs</DependentUpon>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SellItemMethods2Workflow.rules">
+      <DependentUpon>SellItemMethods2Workflow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellItemMethodsWorkflow.rules">
+      <DependentUpon>SellItemMethodsWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellItemPriorityWorkflow.rules">
+      <DependentUpon>SellItemPriorityWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellItemUpdateWorkflow.rules">
+      <DependentUpon>SellItemUpdateWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellItemWorkflow.rules">
+      <DependentUpon>SellItemWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Windows Workflow Foundation\v3.0\Workflow.Targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetDir)$(TargetName)$(TargetExt)"  "$(SolutionDir)\bin"
+if EXIST "$(TargetDir)$(TargetName).pdb" copy "$(TargetDir)$(TargetName).pdb"  "$(SolutionDir)\bin"
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>
